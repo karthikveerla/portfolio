@@ -1,0 +1,28 @@
+.skills__container {
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+}
+
+.skills__card {
+  text-align: center;
+  padding: 1rem;
+  background-color: var(--container-color);
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: var(--shadow);
+}
+
+.skills__card:hover {
+  transform: translateY(-5px);
+  background-color: var(--hover-color);
+}
+
+.skills__img {
+  margin-bottom: 1rem;
+}
+
+.skills__title {
+  font-size: 1rem;
+  font-weight: 500;
+}
