@@ -9,7 +9,7 @@ const Home = () => {
         <section className="home container" id="home">
   <div className="intro flex-container">
     <div className="intro-text">
-      <h1 className="home__name">Karthik Veerla</h1>
+      <h1 className="home__name">Karthik V</h1>
       <span className="home__education">I'm a Full-Stack Java Software Developer</span>
       <HeaderSocials />
       <a href="#contact" className="btn">Contact Me</a>
