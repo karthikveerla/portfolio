@@ -7,7 +7,7 @@
   <br>
 </h1>
 
-<h4 align="center">A simple personal website about <a href="http://karthikveerla.com" target="_blank">Karthik Veerla</a>.</h4>
+<h4 align="center">A simple personal website about <a href="https://karthikveerla.github.io/portfolio/" target="_blank">Karthik Veerla</a>.</h4>
 
 <br>
 
