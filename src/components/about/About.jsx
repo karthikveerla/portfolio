@@ -22,7 +22,7 @@ const About = () => {
                     <p className="about__description">
                         Hello! I'm Karthik Veerla, a passionate Software Developer based in New York, United States.
                         I hold a Master’s degree in Computer and Information Sciences from the University at Albany (SUNY) and a Bachelor's from KLUniversity in India.<br /><br />
-                        With over 4 years of hands-on experience, I specialize in building full-stack applications using Java, Spring Boot, React, Angular, and Node.js. I’m passionate about designing scalable systems using microservices and RESTful APIs, and thrive in Agile environments where innovation meets collaboration.<br /><br />
+                        With 5+ years of hands-on experience, I specialize in building full-stack applications using Java, Spring Boot, React, Python, Django and AWS. I’m passionate about designing scalable systems using microservices and RESTful APIs, and thrive in Agile environments where innovation meets collaboration.<br /><br />
                         <br /><br />
                     </p>
     

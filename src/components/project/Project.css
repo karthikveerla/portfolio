@@ -1,3 +1,4 @@
+/* --- Global Section and Layout --- */
 .project-container {
   display: flex;
   flex-direction: column;
@@ -6,6 +7,7 @@
   position: relative;
 }
 
+/* --- Carousel Wrapper (3D Perspective Added Here) --- */
 .project__carousel-wrapper {
   position: relative;
   width: 100%;
@@ -14,6 +16,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  /* CRITICAL: Enables 3D space for the flip (rotateY) */
+  perspective: 1000px; 
 }
 
 .project__carousel {
@@ -25,6 +29,7 @@
   height: 400px;
 }
 
+/* --- Project Card (3D Transform Properties Added Here) --- */
 .project__card {
   width: 100%;
   height: 100%;
@@ -34,12 +39,20 @@
   overflow: hidden;
   display: flex;
   align-items: center;
-  justify-content: space-between; /* Ensures space between image and content */
+  justify-content: space-between; 
   cursor: pointer;
+  
+  /* CRITICAL FIX: Ensures elements rotate correctly in 3D */
+  transform-style: preserve-3d;
+  /* FIX: Explicitly sets the pivot point to the center for a clean flip */
+  transform-origin: center center; 
+  /* Hides the back side of the card when it rotates */
+  backface-visibility: hidden; 
 }
 
+/* --- Thumbnail & Image --- */
 .project__thumbnail {
-  flex: 0 0 50%; /* Fixed at 50% width */
+  flex: 0 0 50%;
   height: 100%;
   position: relative;
   display: flex;
@@ -65,8 +78,7 @@
   opacity: 0;
 }
 
-
-
+/* --- Content and Text --- */
 .project__content {
   flex: 1;
   padding: 1.5rem;
@@ -74,7 +86,7 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
-  max-width: 50%; /* Limits content width to half */
+  max-width: 50%; 
 }
 
 [data-theme="dark"] .project__title {
@@ -93,7 +105,6 @@
   padding: 0;
   opacity: 1;
   transition: 0.3s;
-  
 }
 
 [data-theme="dark"] .project__description {
@@ -140,6 +151,7 @@
   opacity: 1;
 }
 
+/* --- Pagination Dots --- */
 .project__pagination {
   display: flex;
   gap: 0.5rem;
@@ -165,7 +177,7 @@
   background-color: #aaa;
 }
 
-/* Media Queries */
+/* --- Media Queries --- */
 @media screen and (max-width: 1024px) {
   .project__carousel-wrapper {
     max-width: 700px;
@@ -200,4 +212,60 @@
   .project__thumbnail {
     height: 200px;
   }
+}
+
+/* --- Style for the navigation buttons (Minimal Symbol Only) --- */
+.carousel__button {
+    /* Basic positioning to center them vertically */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%); 
+    
+    /* Symbol sizing */
+    font-size: 3rem; /* Large font size for visibility */
+    
+    /* Theme color (Symbol is colored with the Title/Text color) */
+    color: var(--title-color, #333); 
+    
+    /* Removed all visual background elements */
+    background: none; 
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    width: auto;
+    height: auto;
+    
+    cursor: pointer;
+    transition: color 0.2s ease, transform 0.2s ease;
+    z-index: 10; 
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel__button:hover {
+    /* Subtle color change on hover, using the primary theme color */
+    color: var(--first-color, #6c6ce5);
+    /* No transformation needed, keeping it simple */
+    transform: translateY(-50%);
+}
+
+/* Positioning the symbols relative to the wrapper (Adjusted for no padding/width) */
+.carousel__button.prev {
+    left: -15px; /* Position closer to the edge */
+}
+
+.carousel__button.next {
+    right: -15px; /* Position closer to the edge */
+}
+
+/* Adjust symbol position on smaller screens if necessary */
+@media screen and (max-width: 950px) {
+    .carousel__button.prev {
+        left: 5px; 
+    }
+    .carousel__button.next {
+        right: 5px; 
+    }
 }
